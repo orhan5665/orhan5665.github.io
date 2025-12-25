@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo PNG Dönüştürücü</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: block;
+        }
+        button {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #4f46e5;
+        }
+        .instructions {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #0369a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Geliştirici Logo PNG Dönüştürücü</h1>
+        
+        <div class="instructions">
+            <h3>Kullanım Talimatları:</h3>
+            <ol>
+                <li>Aşağıdaki butonlara tıklayarak 512x512 PNG logo indirin</li>
+                <li>İndirilen dosyayı Google Play Console'a yükleyin</li>
+                <li>Gerekirse başka boyutlarda da indirebilirsiniz</li>
+            </ol>
+        </div>
+
+        <div id="svgContainer"></div>
+        
+        <div>
+            <button onclick="downloadPNG(512)">512x512 PNG İndir (Google Play)</button>
+            <button onclick="downloadPNG(1024)">1024x1024 PNG İndir (Yüksek Kalite)</button>
+            <button onclick="downloadPNG(256)">256x256 PNG İndir (Küçük)</button>
+        </div>
+    </div>
+
+    <script>
+        // SVG içeriği
+        const svgContent = `<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="256" cy="256" r="256" fill="url(#gradient)"/>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <path d="M 200 180 L 200 140 C 200 120, 220 100, 240 100 L 280 100 C 300 100, 320 120, 320 140 L 320 180 L 360 180 C 380 180, 400 200, 400 220 L 400 260 C 400 280, 380 300, 360 300 L 320 300 L 320 340 C 320 360, 300 380, 280 380 L 240 380 C 220 380, 200 360, 200 340 L 200 300 L 160 300 C 140 300, 120 280, 120 260 L 120 220 C 120 200, 140 180, 160 180 Z" 
+        fill="white" 
+        opacity="0.95"
+        filter="url(#shadow)"/>
+  
+  <path d="M 320 220 L 360 220 C 370 220, 380 230, 380 240 L 380 280 C 380 290, 370 300, 360 300 L 340 300 L 340 320 C 340 330, 350 340, 360 340 L 380 340 C 390 340, 400 350, 400 360 L 400 380 C 400 390, 390 400, 380 400 L 360 400 C 350 400, 340 390, 340 380 L 340 360 L 320 360 C 310 360, 300 350, 300 340 L 300 320 L 300 300 L 280 300 C 270 300, 260 290, 260 280 L 260 240 C 260 230, 270 220, 280 220 Z" 
+        fill="#fbbf24" 
+        opacity="0.9"
+        filter="url(#shadow)"/>
+  
+  <circle cx="280" cy="240" r="25" fill="#fbbf24" opacity="0.2"/>
+  <path d="M 280 210 C 270 210, 262 218, 262 228 C 262 232, 264 235, 266 237 L 266 250 L 294 250 L 294 237 C 296 235, 298 232, 298 228 C 298 218, 290 210, 280 210 Z M 280 260 L 270 260 L 270 275 L 290 275 L 290 260 Z M 275 275 L 285 275 L 285 285 L 275 285 Z" 
+        fill="#fbbf24" 
+        opacity="0.8"/>
+  
+  <circle cx="180" cy="200" r="3" fill="white" opacity="0.8"/>
+  <circle cx="340" cy="160" r="3" fill="white" opacity="0.8"/>
+  <circle cx="160" cy="320" r="3" fill="white" opacity="0.8"/>
+  <circle cx="380" cy="280" r="3" fill="white" opacity="0.8"/>
+</svg>`;
+
+        // SVG'yi container'a ekle
+        document.getElementById('svgContainer').innerHTML = svgContent;
+
+        function downloadPNG(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            const img = new Image();
+            const svgBlob = new Blob([svgContent], {type: 'image/svg+xml;charset=utf-8'});
+            const url = URL.createObjectURL(svgBlob);
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, size, size);
+                URL.revokeObjectURL(url);
+                
+                canvas.toBlob(function(blob) {
+                    const link = document.createElement('a');
+                    link.download = `developer-logo-${size}x${size}.png`;
+                    link.href = URL.createObjectURL(blob);
+                    link.click();
+                    URL.revokeObjectURL(link.href);
+                }, 'image/png');
+            };
+            
+            img.src = url;
+        }
+    </script>
+</body>
+</html>
+
+
+
+

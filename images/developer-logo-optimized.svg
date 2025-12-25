@@ -1,0 +1,100 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGradient)"/>
+  
+  <!-- Main Solution Icon - Connected Puzzle Pieces -->
+  <g transform="translate(256, 256)">
+    <!-- Puzzle Piece 1 (Left) -->
+    <path d="M -120 -60 
+             L -120 -100 
+             C -120 -120, -100 -140, -80 -140 
+             L -40 -140 
+             C -20 -140, 0 -120, 0 -100 
+             L 0 -60 
+             L 40 -60 
+             C 60 -60, 80 -40, 80 -20 
+             L 80 20 
+             C 80 40, 60 60, 40 60 
+             L 0 60 
+             L 0 100 
+             C 0 120, -20 140, -40 140 
+             L -80 140 
+             C -100 140, -120 120, -120 100 
+             L -120 60 
+             L -160 60 
+             C -180 60, -200 40, -200 20 
+             L -200 -20 
+             C -200 -40, -180 -60, -160 -60 
+             Z" 
+          fill="white" 
+          opacity="0.95"/>
+    
+    <!-- Puzzle Piece 2 (Right/Connected) -->
+    <path d="M 0 -60 
+             L 40 -60 
+             C 60 -60, 80 -40, 80 -20 
+             L 80 20 
+             C 80 40, 60 60, 40 60 
+             L 0 60 
+             L 0 100 
+             C 0 120, 20 140, 40 140 
+             L 80 140 
+             C 100 140, 120 120, 120 100 
+             L 120 60 
+             L 160 60 
+             C 180 60, 200 40, 200 20 
+             L 200 -20 
+             C 200 -40, 180 -60, 160 -60 
+             L 120 -60 
+             L 120 -100 
+             C 120 -120, 100 -140, 80 -140 
+             L 40 -140 
+             C 20 -140, 0 -120, 0 -100 
+             Z" 
+          fill="#fbbf24" 
+          opacity="0.9"/>
+    
+    <!-- Lightbulb in center (Solution Idea) -->
+    <circle cx="0" cy="0" r="35" fill="#fbbf24" opacity="0.15"/>
+    <path d="M 0 -45 
+             C -10 -45, -18 -37, -18 -27 
+             C -18 -23, -16 -20, -14 -18 
+             L -14 -5 
+             L 14 -5 
+             L 14 -18 
+             C 16 -20, 18 -23, 18 -27 
+             C 18 -37, 10 -45, 0 -45 
+             Z 
+             M -10 5 
+             L -10 20 
+             L 10 20 
+             L 10 5 
+             Z 
+             M -5 20 
+             L 5 20 
+             L 5 30 
+             L -5 30 
+             Z" 
+          fill="#fbbf24" 
+          opacity="0.9"
+          stroke="white"
+          stroke-width="2"/>
+    
+    <!-- Sparkles (Innovation) -->
+    <circle cx="-140" cy="-80" r="4" fill="white" opacity="0.8"/>
+    <circle cx="140" cy="-80" r="4" fill="white" opacity="0.8"/>
+    <circle cx="-140" cy="80" r="4" fill="white" opacity="0.8"/>
+    <circle cx="140" cy="80" r="4" fill="white" opacity="0.8"/>
+  </g>
+</svg>
+
+
+
+
