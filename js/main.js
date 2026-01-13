@@ -148,41 +148,77 @@ fadeElements.forEach(element => {
     fadeObserver.observe(element);
 });
 
-// App card interactions
-const appCards = document.querySelectorAll('.app-card');
-appCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
+// --- Dynamic App Loading ---
+const appsGrid = document.getElementById('appsGrid');
 
-// Add active state to navigation links based on scroll position
-const sections = document.querySelectorAll('section[id]');
-const navLinksActive = document.querySelectorAll('.nav-menu a');
+const renderApps = (apps) => {
+    if (!appsGrid) return;
+    appsGrid.innerHTML = '';
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollY = window.pageYOffset + 100;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+    apps.forEach(app => {
+        const appCard = document.createElement('div');
+        appCard.className = `app-card ${app.featured ? 'featured' : ''}`;
         
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
+        const badgeHtml = app.badge ? `<div class="app-badge">${app.badge}</div>` : '';
+        const featuresHtml = app.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
+        const techHtml = app.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
+
+        appCard.innerHTML = `
+            ${badgeHtml}
+            <div class="app-icon">${app.icon}</div>
+            <h3 class="app-title">${app.title}</h3>
+            <p class="app-description">${app.description}</p>
+            <div class="app-features">
+                ${featuresHtml}
+            </div>
+            <div class="app-tech">
+                ${techHtml}
+            </div>
+            <div class="app-actions">
+                <a href="${app.playStoreUrl}" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-primary">
+                    📱 Play Store'da İndir
+                </a>
+            </div>
+        `;
+
+        appsGrid.appendChild(appCard);
+
+        // Re-attach interactions and observer for this card
+        appCard.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        appCard.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+
+        appCard.style.opacity = '0';
+        appCard.style.transform = 'translateY(20px)';
+        appCard.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        fadeObserver.observe(appCard);
     });
-    
-    navLinksActive.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+};
+
+const loadApps = async () => {
+    try {
+        const response = await fetch('data/apps.json');
+        if (!response.ok) throw new Error('Veri yüklenemedi');
+        const apps = await response.json();
+        renderApps(apps);
+    } catch (error) {
+        console.error('Hata:', error);
+        if (appsGrid) {
+            appsGrid.innerHTML = '<p class="error-message">Uygulamalar yüklenirken bir hata oluştu.</p>';
         }
-    });
+    }
+};
+
+// Initialize app loading
+document.addEventListener('DOMContentLoaded', () => {
+    loadApps();
 });
 
 // Console message
