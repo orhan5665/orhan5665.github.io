@@ -1,0 +1,37 @@
+[
+    {
+        "id": "plus-trade-bot",
+        "title": "Plus Trade Bot",
+        "icon": "🚀",
+        "badge": "Öne Çıkan",
+        "description": "Kripto para piyasalarında kendi otomatik trading stratejilerinizi oluşturun ve test edin. Hem yeni başlayanlar hem de deneyimli yatırımcılar için tasarlanmış kapsamlı bir trading asistanı. DSL ile kod bilgisi gerektirmeden strateji yazın, Binance Futures API ile gerçek zamanlı işlem yapın.",
+        "features": [
+            "📊 10+ Teknik Gösterge",
+            "🤖 Otomatik Trading",
+            "📈 Backtest",
+            "🔔 Akıllı Bildirimler",
+            "⚙️ Risk Yönetimi",
+            "🔒 Güvenli API"
+        ],
+        "tech": ["Flutter", "Dart", "Binance API", "Firebase"],
+        "playStoreUrl": "https://play.google.com/store/apps/details?id=com.or.crypto_app",
+        "featured": true
+    },
+    {
+        "id": "peyv-link",
+        "title": "Peyv Link",
+        "icon": "🔗",
+        "badge": "Yeni",
+        "description": "Kürtçe kelime dağarcığınızı test edebileceğiniz ve arkadaşlarınızla rekabet edebileceğiniz modern bir kelime oyunu. Sosyal özellikler, gerçek zamanlı çok oyunculu mod ve detaylı oyun geçmişi ile eğlence dolu bir deneyim.",
+        "features": [
+            "🎮 Çok Oyunculu Mod",
+            "🌍 Küresel Sıralama",
+            "📊 Oyun İstatistikleri",
+            "💬 Sosyal Etkileşim",
+            "🧩 Zengin Kelime Haznesi"
+        ],
+        "tech": ["Flutter", "Dart", "Firebase"],
+        "playStoreUrl": "https://play.google.com/store/apps/details?id=com.oe.peyvlink.peyv_link",
+        "featured": false
+    }
+]
