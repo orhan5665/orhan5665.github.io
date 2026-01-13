@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>🚀 GitHub Pages Deployment Rehberi | orhan5665</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="🚀 GitHub Pages Deployment Rehberi" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://orhan5665.github.io/DEPLOY.html" />
+<meta property="og:url" content="https://orhan5665.github.io/DEPLOY.html" />
+<meta property="og:site_name" content="orhan5665" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="🚀 GitHub Pages Deployment Rehberi" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"🚀 GitHub Pages Deployment Rehberi","url":"https://orhan5665.github.io/DEPLOY.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=e36d87e792ac065580552e80cfd5c20e8bccf90a">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://orhan5665.github.io/">orhan5665</a></h1>
+      
+
+      <h1 id="-github-pages-deployment-rehberi">🚀 GitHub Pages Deployment Rehberi</h1>
+
+<p>Bu rehber website’yi GitHub Pages’te yayınlamanız için adımları içerir.</p>
+
+<h2 id="-adımlar">📋 Adımlar</h2>
+
+<h3 id="1-githubda-yeni-repository-oluştur">1. GitHub’da Yeni Repository Oluştur</h3>
+
+<ol>
+  <li><a href="https://github.com">GitHub</a> hesabınıza giriş yapın</li>
+  <li>Sağ üstteki “+” butonuna tıklayın ve “New repository” seçin</li>
+  <li>Repository adını girin (örnek: <code class="language-plaintext highlighter-rouge">app-portfolio-website</code> veya <code class="language-plaintext highlighter-rouge">website</code>)</li>
+  <li>Repository’yi <strong>Public</strong> olarak oluşturun (GitHub Pages ücretsiz sürümü için gerekli)</li>
+  <li><strong>README, .gitignore veya lisans eklemeyin</strong> (zaten mevcut)</li>
+  <li>“Create repository” butonuna tıklayın</li>
+</ol>
+
+<h3 id="2-repositoryyi-yerel-projeye-bağla-ve-push-et">2. Repository’yi Yerel Projeye Bağla ve Push Et</h3>
+
+<p>Terminal/Command Prompt’ta website klasöründe şu komutları çalıştırın:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Remote repository'yi ekle (YOUR_USERNAME ve REPO_NAME'i değiştirin)</span>
+git remote add origin https://github.com/YOUR_USERNAME/REPO_NAME.git
+
+<span class="c"># Branch adını main olarak değiştir (GitHub Pages için)</span>
+git branch <span class="nt">-M</span> main
+
+<span class="c"># Dosyaları GitHub'a gönder</span>
+git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<p><strong>Örnek:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin https://github.com/orhanerbek/app-portfolio-website.git
+git branch <span class="nt">-M</span> main
+git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<h3 id="3-github-pagesi-aktif-et">3. GitHub Pages’i Aktif Et</h3>
+
+<ol>
+  <li>GitHub repository sayfanıza gidin</li>
+  <li><strong>Settings</strong> sekmesine tıklayın</li>
+  <li>Sol menüden <strong>Pages</strong> seçeneğine tıklayın</li>
+  <li><strong>Source</strong> kısmında:
+    <ul>
+      <li>“Deploy from a branch” seçin</li>
+      <li>Branch: <strong>main</strong> (veya <strong>master</strong>)</li>
+      <li>Folder: <strong>/ (root)</strong> seçin</li>
+      <li>“Save” butonuna tıklayın</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="4-github-actions-ile-otomatik-deploy-önerilen">4. GitHub Actions ile Otomatik Deploy (Önerilen)</h3>
+
+<p>Yukarıdaki ayarları yaptıktan sonra:</p>
+
+<ol>
+  <li>Repository’nizde <strong>Actions</strong> sekmesine gidin</li>
+  <li>İlk kez kullanıyorsanız, “I understand my workflows, go ahead and enable them” butonuna tıklayın</li>
+  <li><code class="language-plaintext highlighter-rouge">.github/workflows/deploy.yml</code> dosyası otomatik olarak çalışacak</li>
+</ol>
+
+<h3 id="5-websitenizi-görüntüleme">5. Website’nizi Görüntüleme</h3>
+
+<p>Deployment tamamlandıktan sonra (birkaç dakika sürebilir):</p>
+
+<ol>
+  <li>Repository Settings &gt; Pages bölümüne gidin</li>
+  <li><strong>“Your site is live at…“</strong> başlığının altında website URL’inizi göreceksiniz</li>
+  <li>URL şu formatta olacak: <code class="language-plaintext highlighter-rouge">https://YOUR_USERNAME.github.io/REPO_NAME/</code></li>
+</ol>
+
+<p><strong>Örnek:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">https://orhanerbek.github.io/app-portfolio-website/</code></li>
+</ul>
+
+<h3 id="6-app-adstxt-doğrulama">6. app-ads.txt Doğrulama</h3>
+
+<p>Website yayınlandıktan sonra:</p>
+
+<ol>
+  <li>Website URL’inizi kontrol edin: <code class="language-plaintext highlighter-rouge">https://YOUR_USERNAME.github.io/REPO_NAME/app-ads.txt</code></li>
+  <li>Dosya görüntülenebiliyorsa, Google Play Console’da doğrulama yapabilirsiniz</li>
+  <li>Google Play Console’da belirttiğiniz domain şu olmalı: <code class="language-plaintext highlighter-rouge">YOUR_USERNAME.github.io</code></li>
+</ol>
+
+<h2 id="-güncellemeler">🔄 Güncellemeler</h2>
+
+<p>Website’yi güncellemek için:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Değişiklikleri ekle</span>
+git add <span class="nb">.</span>
+
+<span class="c"># Commit yap</span>
+git commit <span class="nt">-m</span> <span class="s2">"Update: açıklama buraya"</span>
+
+<span class="c"># GitHub'a gönder</span>
+git push
+</code></pre></div></div>
+
+<p>GitHub Actions otomatik olarak yeni versiyonu deploy edecektir.</p>
+
+<h2 id="-özel-domain-kullanma-opsiyonel">🎯 Özel Domain Kullanma (Opsiyonel)</h2>
+
+<p>Eğer kendi domain’inizi kullanmak isterseniz:</p>
+
+<ol>
+  <li>Domain’inizde bir CNAME kaydı oluşturun:
+    <ul>
+      <li>Type: <code class="language-plaintext highlighter-rouge">CNAME</code></li>
+      <li>Name: <code class="language-plaintext highlighter-rouge">www</code> (veya <code class="language-plaintext highlighter-rouge">@</code>)</li>
+      <li>Value: <code class="language-plaintext highlighter-rouge">YOUR_USERNAME.github.io</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>GitHub Pages ayarlarında “Custom domain” alanına domain’inizi girin</p>
+  </li>
+  <li>DNS propagasyonu için birkaç saat bekleyin</li>
+</ol>
+
+<h2 id="️-önemli-notlar">⚠️ Önemli Notlar</h2>
+
+<ul>
+  <li>GitHub Pages ücretsiz sürümü için repository <strong>Public</strong> olmalıdır</li>
+  <li>Deployment işlemi genellikle 1-2 dakika sürer</li>
+  <li>İlk deployment’tan sonra website’niz birkaç dakika içinde erişilebilir olacaktır</li>
+  <li>HTTPS otomatik olarak aktif olur</li>
+</ul>
+
+<h2 id="-sorun-giderme">🆘 Sorun Giderme</h2>
+
+<p><strong>Website görünmüyor:</strong></p>
+<ul>
+  <li>Settings &gt; Pages’te source’un doğru ayarlandığından emin olun</li>
+  <li>Actions sekmesinde deployment’ın başarılı olduğunu kontrol edin</li>
+  <li>Birkaç dakika bekleyin (DNS propagasyonu)</li>
+</ul>
+
+<p><strong>404 Hatası:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">index.html</code> dosyasının root dizinde olduğundan emin olun</li>
+  <li>Dosya adlarının doğru olduğundan emin olun (büyük/küçük harf duyarlı)</li>
+</ul>
+
+<p><strong>app-ads.txt çalışmıyor:</strong></p>
+<ul>
+  <li>Dosyanın root dizinde olduğundan emin olun</li>
+  <li>Google Play Console’da domain’in doğru girildiğinden emin olun</li>
+  <li>GitHub Pages URL’inin tam olarak eşleştiğinden emin olun</li>
+</ul>
+
+<hr />
+
+<p><strong>İyi çalışmalar! 🚀</strong></p>
+
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

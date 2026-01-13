@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>🔄 Website Güncelleme ve Deploy Rehberi | orhan5665</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="🔄 Website Güncelleme ve Deploy Rehberi" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://orhan5665.github.io/GUNCELLEME_REHBERI.html" />
+<meta property="og:url" content="https://orhan5665.github.io/GUNCELLEME_REHBERI.html" />
+<meta property="og:site_name" content="orhan5665" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="🔄 Website Güncelleme ve Deploy Rehberi" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"🔄 Website Güncelleme ve Deploy Rehberi","url":"https://orhan5665.github.io/GUNCELLEME_REHBERI.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=e36d87e792ac065580552e80cfd5c20e8bccf90a">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://orhan5665.github.io/">orhan5665</a></h1>
+      
+
+      <h1 id="-website-güncelleme-ve-deploy-rehberi">🔄 Website Güncelleme ve Deploy Rehberi</h1>
+
+<p>Bu rehber website’yi güncelledikten sonra GitHub’a push edip yayınlamanız için adımları içerir.</p>
+
+<h2 id="-hızlı-başlangıç">📝 Hızlı Başlangıç</h2>
+
+<p>Website’de bir değişiklik yaptıktan sonra, şu 3 adımı takip edin:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Değişiklikleri ekle</span>
+git add <span class="nb">.</span>
+
+<span class="c"># 2. Commit yap (değişiklikleri açıkla)</span>
+git commit <span class="nt">-m</span> <span class="s2">"Değişiklik açıklaması buraya"</span>
+
+<span class="c"># 3. GitHub'a gönder</span>
+git push
+</code></pre></div></div>
+
+<h2 id="-detaylı-adımlar">🚀 Detaylı Adımlar</h2>
+
+<h3 id="1-terminalpowershelli-açın">1. Terminal/PowerShell’i Açın</h3>
+
+<p>Website klasörüne gidin:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>C:<span class="se">\p</span>rojrcts<span class="se">\n</span>ewFolder<span class="se">\w</span>ebsite
+</code></pre></div></div>
+
+<h3 id="2-yapılan-değişiklikleri-kontrol-edin">2. Yapılan Değişiklikleri Kontrol Edin</h3>
+
+<p>Hangi dosyaların değiştiğini görmek için:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>Bu komut size hangi dosyaların değiştirildiğini, eklenip eklenmediğini gösterir.</p>
+
+<h3 id="3-değişiklikleri-staging-areaya-ekleyin">3. Değişiklikleri Staging Area’ya Ekleyin</h3>
+
+<p><strong>Tüm değişiklikleri eklemek için:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div></div>
+
+<p><strong>Sadece belirli bir dosyayı eklemek için:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add index.html
+git add css/style.css
+<span class="c"># vs...</span>
+</code></pre></div></div>
+
+<h3 id="4-commit-yapın-değişiklikleri-kaydedin">4. Commit Yapın (Değişiklikleri Kaydedin)</h3>
+
+<p>Her commit’in açıklayıcı bir mesajı olmalı:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Açıklayıcı mesaj buraya"</span>
+</code></pre></div></div>
+
+<p><strong>İyi commit mesajı örnekleri:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Ana sayfa tasarımını güncelle"</span>
+git commit <span class="nt">-m</span> <span class="s2">"Yeni uygulama kartı eklendi"</span>
+git commit <span class="nt">-m</span> <span class="s2">"İletişim formu düzeltildi"</span>
+git commit <span class="nt">-m</span> <span class="s2">"Mobil responsive iyileştirmeleri"</span>
+git commit <span class="nt">-m</span> <span class="s2">"Play Store linki güncellendi"</span>
+</code></pre></div></div>
+
+<h3 id="5-githuba-push-edin">5. GitHub’a Push Edin</h3>
+
+<p>Değişiklikleri GitHub’a göndermek için:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push
+</code></pre></div></div>
+
+<p>İlk seferinde kullanıcı adı ve şifre isteyebilir. GitHub Personal Access Token kullanmanız gerekebilir.</p>
+
+<h3 id="6-otomatik-deploy">6. Otomatik Deploy</h3>
+
+<p>Push işlemi tamamlandıktan sonra:</p>
+
+<ul>
+  <li>GitHub Actions otomatik olarak devreye girer</li>
+  <li>Website otomatik olarak build edilir ve deploy edilir</li>
+  <li>Birkaç dakika içinde website güncellenir</li>
+</ul>
+
+<h2 id="-deployment-durumunu-kontrol-etme">📊 Deployment Durumunu Kontrol Etme</h2>
+
+<h3 id="githubda-kontrol">GitHub’da Kontrol</h3>
+
+<ol>
+  <li>Repository sayfanıza gidin: https://github.com/orhan5665/app-portfolio-website</li>
+  <li><strong>Actions</strong> sekmesine tıklayın</li>
+  <li>En üstteki workflow’un durumunu kontrol edin:
+    <ul>
+      <li>✅ Yeşil tik = Başarılı</li>
+      <li>⏳ Sarı daire = Devam ediyor</li>
+      <li>❌ Kırmızı X = Hata var</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="websitede-kontrol">Website’de Kontrol</h3>
+
+<p>Push’tan 1-2 dakika sonra:</p>
+<ul>
+  <li>Website’yi açın: https://orhan5665.github.io/app-portfolio-website/</li>
+  <li>Sayfayı yenileyin (Ctrl+F5 veya Cmd+Shift+R)</li>
+  <li>Değişikliklerin göründüğünden emin olun</li>
+</ul>
+
+<h2 id="-sık-kullanılan-senaryolar">🔍 Sık Kullanılan Senaryolar</h2>
+
+<h3 id="senaryo-1-sadece-html-güncelleme">Senaryo 1: Sadece HTML Güncelleme</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># HTML dosyasını düzenlediniz</span>
+git add index.html
+git commit <span class="nt">-m</span> <span class="s2">"Ana sayfa içeriği güncellendi"</span>
+git push
+</code></pre></div></div>
+
+<h3 id="senaryo-2-css-değişiklikleri">Senaryo 2: CSS Değişiklikleri</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># CSS dosyasını düzenlediniz</span>
+git add css/style.css
+git commit <span class="nt">-m</span> <span class="s2">"Renk şeması ve responsive tasarım iyileştirmeleri"</span>
+git push
+</code></pre></div></div>
+
+<h3 id="senaryo-3-javascript-değişiklikleri">Senaryo 3: JavaScript Değişiklikleri</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JavaScript dosyasını düzenlediniz</span>
+git add js/main.js
+git commit <span class="nt">-m</span> <span class="s2">"Form validasyonu eklendi"</span>
+git push
+</code></pre></div></div>
+
+<h3 id="senaryo-4-yeni-uygulama-eklendi">Senaryo 4: Yeni Uygulama Eklendi</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># index.html'e yeni uygulama kartı eklediniz</span>
+git add index.html
+git commit <span class="nt">-m</span> <span class="s2">"Yeni uygulama: [Uygulama Adı] eklendi"</span>
+git push
+</code></pre></div></div>
+
+<h3 id="senaryo-5-çoklu-dosya-değişikliği">Senaryo 5: Çoklu Dosya Değişikliği</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Birden fazla dosyayı düzenlediniz</span>
+git add index.html css/style.css js/main.js
+git commit <span class="nt">-m</span> <span class="s2">"Genel tasarım güncellemesi"</span>
+git push
+</code></pre></div></div>
+
+<h3 id="senaryo-6-hepsini-güncelle">Senaryo 6: Hepsini Güncelle</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Tüm değişiklikleri ekle</span>
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Kapsamlı site güncellemesi"</span>
+git push
+</code></pre></div></div>
+
+<h2 id="️-sorun-giderme">⚠️ Sorun Giderme</h2>
+
+<h3 id="changes-not-staged-for-commit-hatası">“Changes not staged for commit” Hatası</h3>
+
+<p>Bu, değişikliklerin henüz staging area’ya eklenmediği anlamına gelir:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Mesaj"</span>
+</code></pre></div></div>
+
+<h3 id="nothing-to-commit-mesajı">“Nothing to commit” Mesajı</h3>
+
+<p>Bu, tüm değişikliklerin zaten commit edildiği anlamına gelir. Yeni bir değişiklik yapmanız gerekir.</p>
+
+<h3 id="push-hatası-authentication-failed">Push Hatası: Authentication Failed</h3>
+
+<p>GitHub kimlik doğrulama sorunu:</p>
+
+<ol>
+  <li>GitHub Personal Access Token kullanın (şifre yerine)</li>
+  <li>Veya GitHub Desktop uygulamasını kullanın</li>
+</ol>
+
+<p><strong>Personal Access Token oluşturma:</strong></p>
+<ol>
+  <li>GitHub &gt; Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic)</li>
+  <li>“Generate new token” butonuna tıklayın</li>
+  <li>“repo” iznini seçin</li>
+  <li>Token’ı kopyalayın ve şifre yerine kullanın</li>
+</ol>
+
+<h3 id="website-güncellenmedi">Website Güncellenmedi</h3>
+
+<ol>
+  <li>Birkaç dakika bekleyin (deploy zaman alabilir)</li>
+  <li>Tarayıcı cache’ini temizleyin (Ctrl+Shift+Delete)</li>
+  <li>Hard refresh yapın (Ctrl+F5)</li>
+  <li>GitHub Actions’ta hata olup olmadığını kontrol edin</li>
+</ol>
+
+<h3 id="yanlış-commit-mesajı">Yanlış Commit Mesajı</h3>
+
+<p>Eğer commit mesajını değiştirmek isterseniz:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">--amend</span> <span class="nt">-m</span> <span class="s2">"Yeni mesaj"</span>
+git push <span class="nt">--force</span>
+</code></pre></div></div>
+
+<p>⚠️ <strong>Dikkat:</strong> Force push sadece kendi branch’inizde yapın, başkalarıyla çalışıyorsanız dikkatli olun.</p>
+
+<h2 id="-github-desktop-kullanımı-alternatif">📱 GitHub Desktop Kullanımı (Alternatif)</h2>
+
+<p>Eğer komut satırı kullanmak istemiyorsanız, GitHub Desktop uygulamasını kullanabilirsiniz:</p>
+
+<ol>
+  <li><strong>GitHub Desktop’ı indirin:</strong> https://desktop.github.com/</li>
+  <li>Repository’nizi açın</li>
+  <li>Değişiklikleri görün</li>
+  <li>Sol alt köşede commit mesajı yazın</li>
+  <li>“Commit to main” butonuna tıklayın</li>
+  <li>“Push origin” butonuna tıklayın</li>
+</ol>
+
+<h2 id="-best-practices-en-i̇yi-uygulamalar">🎯 Best Practices (En İyi Uygulamalar)</h2>
+
+<h3 id="1-anlamlı-commit-mesajları">1. Anlamlı Commit Mesajları</h3>
+
+<p>✅ <strong>İyi:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Uygulama kartlarına hover efekti eklendi"</span>
+git commit <span class="nt">-m</span> <span class="s2">"Mobil menü düzeltildi"</span>
+git commit <span class="nt">-m</span> <span class="s2">"Play Store linkini güncelle"</span>
+</code></pre></div></div>
+
+<p>❌ <strong>Kötü:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"güncelleme"</span>
+git commit <span class="nt">-m</span> <span class="s2">"değişiklik"</span>
+git commit <span class="nt">-m</span> <span class="s2">"fix"</span>
+</code></pre></div></div>
+
+<h3 id="2-sık-commit-yapın">2. Sık Commit Yapın</h3>
+
+<p>Küçük, anlamlı değişiklikler için sık sık commit yapın. Büyük değişiklikleri tek seferde commit etmekten kaçının.</p>
+
+<h3 id="3-push-öncesi-kontrol">3. Push Öncesi Kontrol</h3>
+
+<p>Push etmeden önce:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status    <span class="c"># Değişiklikleri kontrol et</span>
+git diff      <span class="c"># Değişiklikleri incele</span>
+</code></pre></div></div>
+
+<h3 id="4-test-edin">4. Test Edin</h3>
+
+<p>Mümkünse, push etmeden önce değişiklikleri yerel olarak test edin:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">index.html</code> dosyasını tarayıcıda açın</li>
+  <li>Görünümü kontrol edin</li>
+  <li>Linklerin çalıştığından emin olun</li>
+</ul>
+
+<h2 id="-hızlı-referans-komutları">📋 Hızlı Referans Komutları</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Durum kontrolü</span>
+git status
+
+<span class="c"># Değişiklikleri görüntüle</span>
+git diff
+
+<span class="c"># Tüm değişiklikleri ekle</span>
+git add <span class="nb">.</span>
+
+<span class="c"># Commit yap</span>
+git commit <span class="nt">-m</span> <span class="s2">"Mesaj"</span>
+
+<span class="c"># GitHub'a gönder</span>
+git push
+
+<span class="c"># Commit geçmişini görüntüle</span>
+git log <span class="nt">--oneline</span>
+
+<span class="c"># Son commit'i iptal et (değişiklikler durur)</span>
+git reset <span class="nt">--soft</span> HEAD~1
+</code></pre></div></div>
+
+<h2 id="-faydalı-linkler">🔗 Faydalı Linkler</h2>
+
+<ul>
+  <li><strong>Website:</strong> https://orhan5665.github.io/app-portfolio-website/</li>
+  <li><strong>Repository:</strong> https://github.com/orhan5665/app-portfolio-website</li>
+  <li><strong>GitHub Actions:</strong> https://github.com/orhan5665/app-portfolio-website/actions</li>
+  <li><strong>GitHub Pages Settings:</strong> https://github.com/orhan5665/app-portfolio-website/settings/pages</li>
+</ul>
+
+<hr />
+
+<p><strong>Not:</strong> Her push işleminden sonra website otomatik olarak 1-2 dakika içinde güncellenecektir. Sabırlı olun! 🚀</p>
+
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
