@@ -1,5 +1,470 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PeyvLink ve Verlo uygulamaları için Gizlilik Politikası." />
+  <title>Gizlilik Politikası — PeyvLink &amp; Verlo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4f7f6;
+      --bg-elevated: #ffffff;
+      --ink: #14201e;
+      --ink-soft: #3d4f4c;
+      --muted: #6b7c79;
+      --line: #d8e3e0;
+      --teal: #2f8f8a;
+      --teal-deep: #1f6b67;
+      --teal-soft: #e6f3f2;
+      --gold: #b8925a;
+      --shadow: 0 18px 50px rgba(20, 32, 30, 0.08);
+      --radius: 18px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 420px at 10% -10%, #d9efec 0%, transparent 55%),
+        radial-gradient(700px 360px at 100% 0%, #f3e8d4 0%, transparent 50%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: var(--teal-deep); text-underline-offset: 3px; }
+    a:hover { color: var(--teal); }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal-deep);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .badge::before {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .lead {
+      max-width: 58ch;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .meta strong { color: var(--ink-soft); font-weight: 600; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.1rem 1rem;
+    }
+
+    .toc h2 {
+      margin: 0 0 0.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .toc ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .toc a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      padding: 0.4rem 0.55rem;
+      border-radius: 10px;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      background: var(--teal-soft);
+      color: var(--teal-deep);
+    }
+
+    .card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+      padding: clamp(1.4rem, 3vw, 2.4rem);
+    }
+
+    section {
+      padding: 1.6rem 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 1.25rem;
+    }
+
+    section:first-of-type { border-top: 0; padding-top: 0; }
+
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem;
+    }
+
+    p, li { color: var(--ink-soft); }
+    p { margin: 0 0 0.9rem; }
+    p:last-child, ul:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0 0 0.9rem;
+      padding-left: 1.2rem;
+    }
+
+    li + li { margin-top: 0.35rem; }
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin: 1rem 0 0;
+    }
+
+    .app-tile {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem;
+      background: linear-gradient(180deg, #fbfdfc 0%, #f3f8f7 100%);
+    }
+
+    .app-tile strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .app-tile span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .links {
+      display: grid;
+      gap: 0.65rem;
+      margin-top: 0.85rem;
+    }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fafcfb;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .link-row:hover {
+      border-color: #b7d4d1;
+      transform: translateY(-1px);
+    }
+
+    .link-row strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .link-row span {
+      color: var(--muted);
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .callout {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      background: var(--teal-soft);
+      border: 1px solid #c7e4e1;
+      color: var(--teal-deep);
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1rem;
+      margin-top: 0.75rem;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      background: #152422;
+      color: #e7f2f0;
+    }
+
+    .contact a {
+      color: #9fd8d3;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact a:hover { color: #c7efeb; }
+
+    footer {
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .apps { grid-template-columns: 1fr; }
+      .link-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="badge-row">
+        <span class="badge">PeyvLink</span>
+        <span class="badge">Verlo</span>
+      </div>
+      <h1>Gizlilik Politikası</h1>
+      <p class="lead">
+        Bu sayfa; <strong>PeyvLink</strong> ve <strong>Verlo</strong> mobil uygulamaları
+        ile ilişkili web siteleri ve alt alan adları (topluca “Hizmetimiz”) için geçerlidir.
+      </p>
+      <div class="meta">
+        <div><strong>Son güncelleme:</strong> 1 Ağustos 2026</div>
+        <div><strong>Yürürlük:</strong> 01-08-2026</div>
+        <div><strong>İletişim:</strong> orhan5665@gmail.com</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" aria-label="İçindekiler">
+        <h2>İçindekiler</h2>
+        <ol>
+          <li><a href="#kapsam">Kapsam</a></li>
+          <li><a href="#toplama">Bilgi toplama</a></li>
+          <li><a href="#ucuncu-taraf">Üçüncü taraflar</a></li>
+          <li><a href="#log">Günlük verileri</a></li>
+          <li><a href="#cerezler">Çerezler</a></li>
+          <li><a href="#saglayicilar">Hizmet sağlayıcılar</a></li>
+          <li><a href="#guvenlik">Güvenlik</a></li>
+          <li><a href="#baglantilar">Diğer siteler</a></li>
+          <li><a href="#cocuklar">Çocukların gizliliği</a></li>
+          <li><a href="#degisiklikler">Değişiklikler</a></li>
+          <li><a href="#iletisim">Bize ulaşın</a></li>
+        </ol>
+      </nav>
+
+      <main class="card">
+        <section id="kapsam">
+          <h2>Kapsam ve kabul</h2>
+          <p>
+            PeyvLink ve Verlo (“biz”, “bizim” veya “bize”) gizliliğinizi korumaya kararlıdır.
+            Bu Gizlilik Politikası, kişisel bilgilerinizin nasıl toplandığını, kullanıldığını
+            ve ifşa edildiğini açıklar.
+          </p>
+          <div class="apps">
+            <div class="app-tile">
+              <strong>PeyvLink</strong>
+              <span>Kelime / bulmaca uygulaması</span>
+            </div>
+            <div class="app-tile">
+              <strong>Verlo</strong>
+              <span>Kelime keşif oyunu (com.oe.verlo)</span>
+            </div>
+          </div>
+          <p style="margin-top:1rem">
+            Hizmetimize erişerek veya Hizmetimizi kullanarak, kişisel bilgilerinizin bu
+            Gizlilik Politikası’nda ve varsa Hizmet Şartlarımızda açıklandığı şekilde
+            toplanmasını, saklanmasını, kullanılmasını ve ifşa edilmesini okuduğunuzu,
+            anladığınızı ve kabul ettiğinizi beyan etmiş olursunuz.
           </p>
         </section>
+
+        <section id="toplama">
+          <h2>Bilgi toplama ve kullanım</h2>
+          <p>
+            Daha iyi bir deneyim için, Hizmetimizi kullanırken kimliğinizi belirleyebilecek
+            bazı kişisel bilgileri (örneğin skor tabloları veya mücadele / çok oyunculu
+            özellikler için görünen ad) sağlamanızı isteyebiliriz. Talep ettiğimiz bilgiler
+            cihazınızda tutulabilir; bu gizlilik politikasında açıklanan durumlar haricinde
+            tarafımızca keyfi olarak toplanmaz.
+          </p>
+          <p>
+            Uygulamalarımız; sizi tanımlamak veya cihazınız hakkında veri toplamak için
+            kullanılabilecek üçüncü taraf hizmetleri kullanabilir.
+          </p>
+        </section>
+
+        <section id="ucuncu-taraf">
+          <h2>Üçüncü taraf hizmetler</h2>
+          <p>
+            PeyvLink ve Verlo tarafından kullanılan başlıca üçüncü taraf hizmet sağlayıcılarının
+            gizlilik politikaları:
+          </p>
+          <div class="links">
+            <a class="link-row" href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">
+              <strong>Google Play Hizmetleri</strong>
+              <span>Politikayı aç ↗</span>
+            </a>
+            <a class="link-row" href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank" rel="noopener noreferrer">
+              <strong>AdMob</strong>
+              <span>Politikayı aç ↗</span>
+            </a>
+            <a class="link-row" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">
+              <strong>Firebase</strong>
+              <span>Auth, Analytics ve ilgili hizmetler ↗</span>
+            </a>
+          </div>
+          <div class="callout">
+            Bu listeler zamanla güncellenebilir. Hizmetlerin güncel gizlilik uygulamaları için
+            ilgili sağlayıcıların kendi politikalarını da incelemenizi öneririz.
+          </div>
+        </section>
+
+        <section id="log">
+          <h2>Günlük verileri (Log Data)</h2>
+          <p>
+            Hizmetimizi her kullandığınızda, uygulamada bir hata olması durumunda
+            (üçüncü taraf ürünler aracılığıyla) cihazınızda Günlük Verileri adı verilen
+            veri ve bilgileri toplayabiliriz. Bu veriler; cihazınızın İnternet Protokolü
+            (“IP”) adresi, cihaz adı, işletim sistemi sürümü, Hizmetimizi kullanırken
+            uygulamanın yapılandırması, kullanımın saat ve tarihi ile diğer istatistikleri
+            içerebilir.
+          </p>
+        </section>
+
+        <section id="cerezler">
+          <h2>Çerezler (Cookies)</h2>
+          <p>
+            Çerezler, genellikle anonim ve benzersiz tanımlayıcılar olarak kullanılan,
+            küçük miktarda veri içeren dosyalardır. Bunlar, ziyaret ettiğiniz web
+            sitelerinden tarayıcınıza gönderilir ve cihazınızın dahili belleğinde saklanır.
+          </p>
+          <p>
+            Bu Hizmet, çerezleri doğrudan kullanmayabilir. Ancak uygulamalarımız; bilgi
+            toplamak ve hizmetlerini iyileştirmek için çerez kullanan üçüncü taraf kodlar
+            ve kütüphaneler kullanabilir. Çerezleri kabul etme veya reddetme ve cihazınıza
+            ne zaman bir çerez gönderildiğini bilme seçeneğine sahip olabilirsiniz.
+            Çerezleri reddetmeyi seçerseniz, Hizmetin bazı kısımlarını kullanamayabilirsiniz.
+          </p>
+        </section>
+
+        <section id="saglayicilar">
+          <h2>Hizmet sağlayıcılar</h2>
+          <p>Aşağıdaki nedenlerden dolayı üçüncü taraf şirketlerle ve kişilerle çalışabiliriz:</p>
+          <ul>
+            <li>Hizmetimizi kolaylaştırmak için;</li>
+            <li>Hizmeti bizim adımıza sunmak için;</li>
+            <li>Hizmetle ilgili işlemleri gerçekleştirmek için; veya</li>
+            <li>Hizmetimizin nasıl kullanıldığını analiz etmemize yardımcı olmak için.</li>
+          </ul>
+          <p>
+            Bu üçüncü tarafların, kendilerine atanan görevleri yerine getirmek amacıyla
+            Kişisel Bilgilerinize erişimi olabilir. Ancak bu bilgileri başka hiçbir amaçla
+            ifşa etmemek veya kullanmamakla yükümlüdürler.
+          </p>
+        </section>
+
+        <section id="guvenlik">
+          <h2>Güvenlik</h2>
+          <p>
+            Kişisel Bilgilerinizi bize sağlama konusundaki güveninize değer veriyoruz;
+            bu nedenle bu bilgileri korumak için ticari olarak kabul edilebilir yöntemleri
+            kullanmaya çalışıyoruz. Bununla birlikte, internet üzerinden hiçbir aktarım
+            yönteminin veya elektronik depolama yönteminin %100 güvenli ve güvenilir
+            olmadığını ve mutlak güvenliği garanti edemeyeceğimizi unutmayın.
+          </p>
+        </section>
+
+        <section id="baglantilar">
+          <h2>Diğer sitelere bağlantılar</h2>
+          <p>
+            Bu Hizmet diğer sitelere bağlantılar içerebilir. Üçüncü taraf bir bağlantıya
+            tıklarsanız o siteye yönlendirilirsiniz. Bu harici siteler bizim tarafımızdan
+            işletilmez; bu nedenle ilgili sitelerin Gizlilik Politikalarını incelemenizi
+            öneririz. Üçüncü taraf sitelerin veya hizmetlerin içeriği, gizlilik politikaları
+            veya uygulamaları üzerinde kontrolümüz yoktur ve sorumluluk kabul etmeyiz.
+          </p>
+        </section>
+
         <section id="cocuklar">
           <h2>Çocukların gizliliği</h2>
           <p>
@@ -11,6 +476,7 @@
             yapabilmemiz için lütfen bizimle iletişime geçin.
           </p>
         </section>
+
         <section id="degisiklikler">
           <h2>Bu Gizlilik Politikasındaki değişiklikler</h2>
           <p>
@@ -20,6 +486,7 @@
           </p>
           <p>Bu politika <strong>01-08-2026</strong> tarihi itibarıyla geçerlidir.</p>
         </section>
+
         <section id="iletisim">
           <h2>Bize ulaşın</h2>
           <p>
@@ -33,6 +500,7 @@
         </section>
       </main>
     </div>
+
     <footer>
       © 2026 PeyvLink &amp; Verlo — Gizlilik Politikası
     </footer>
